@@ -1,29 +1,37 @@
-from unittest import case
 
-num1 = int (input("Digite um número: "))
-num2 = int (input("Digite outro número: "))
-num3 = int (input("Digite outro número: "))
-maior,meio,menor = 0
+num1 = int (input("Digite um numero: "))
+num2 = int (input("Digite outro numero: "))
+num3 = int (input("Digite outro numero: "))
 
-match num1>num2 and num1>num3:
-    case True:
-        maior = num1
-        match num2>num3:
-            case True:
-                meio = num2
-                menor = num3
-            case False: 
-                meio = num3
-                menor = num2
-    case False:
-        match num2>num1 and num2>num3:
-            case True:
-                maior = num2
-                match num1 > num3:
-                    case True:
-                        meio = num1
-                        menor = num3
-                    case False:
+'''ordenar os números em ordem crescente'''
 
-        #finalizar
+if num1 > num2 and num1 > num3:
+    maior = num1
+    if num2 > num3:
+        meio = num2
+        menor = num3
+    else:
+        meio = num3
+        menor = num2
+elif num2 > num1 and num2 > num3:
+    maior = num2
+    if num1 > num3:
+        meio = num1
+        menor = num3
+    else:
+        meio = num3
+        menor = num1
+else:
+    maior = num3
+    if num1 > num2:
+        meio = num1
+        menor = num2
+    else:
+        meio = num2
+        menor = num1
+
+print(f"Os números em ordem crescente são: {menor}, {meio} e {maior}")
+
+
+
 
